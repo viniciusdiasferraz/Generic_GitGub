@@ -71,11 +71,11 @@ export default function UsersInformation() {
           </div>
         </div>
 
-        <div className="flex items-center justify-center flex-col w-full h-[90vh]">
+        <div className="flex items-center justify-center flex-col w-full h-[auto]">
           <p className="text-white text-2xl">Repositories</p>
           <div className="h-[75%] overflow-x-hidden overflow-y-scroll scrollbar-thin scrollbar-thumb-[#30363d] scrollbar-track-transparent p-2 min-w-[80%]">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-3">
-              {userRepositories.map((repositories) => {
+              {userRepositories.map((repositories, index) => {
                 const language = repositories.language
                   ? repositories.language
                   : "n/a";
@@ -83,7 +83,7 @@ export default function UsersInformation() {
                   programmingLanguageStatusIcons[repositories.language] ??
                   "#8d96a0";
                 return (
-                  <Card>
+                  <Card key={index}>
                     <div className="flex justify-between w-full">
                       <a
                         className="text-white"

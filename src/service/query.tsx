@@ -1,7 +1,7 @@
 import { api, ApiError } from "./api";
 
 export const useServices = () => {
-  const getUser = async (id) => {
+  const getUser = async (id: string | string[]) => {
     try {
       const { data } = await api.get(`/users/${id}`);
       return data;
@@ -10,7 +10,7 @@ export const useServices = () => {
     }
   };
 
-  const getUserRepo = async (id) => {
+  const getUserRepo = async (id: string | string[]) => {
     try {
       const { data } = await api.get(`/users/${id}/repos`);
       return data;
@@ -22,7 +22,7 @@ export const useServices = () => {
     }
   };
 
-  const getUserInfo = async (user, id) => {
+  const getUserInfo = async (user: string | string[], id: string | string[]) => {
     try {
       const { data } = await api.get(`/repos/${user}/${id}`);
       return data;

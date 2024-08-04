@@ -5,9 +5,10 @@ import { toast } from "react-toastify";
 import { IconEyes } from "../../icons/iconEyes";
 import { IconFork } from "../../icons/iconFork";
 import { IconStar } from "../../icons/iconStart";
+import Repository from "../../types/allTypes";
 
 export const useRepoInformation = () => {
-  const [repoInfo, setRepoInfo] = useState([]);
+  const [repoInfo, setRepoInfo] = useState<Repository>();
   const { query } = useRouter();
   const { user, id } = query;
   const { getUserInfo } = useServices();
@@ -22,7 +23,7 @@ export const useRepoInformation = () => {
   };
 
   useEffect(() => {
-    if (id && repoInfo.length === 0) {
+    if (id && !repoInfo) {
       repositories();
     }
   }, [repoInfo, id]);
@@ -30,17 +31,17 @@ export const useRepoInformation = () => {
   const listTags = [
     {
       text: "Watch",
-      number: repoInfo.subscribers_count,
+      number: repoInfo?.subscribers_count,
       icon: <IconEyes />,
     },
     {
       text: "Fork",
-      number: repoInfo.forks,
+      number: repoInfo?.forks,
       icon: <IconFork />,
     },
     {
       text: "Star",
-      number: repoInfo.stargazers_count,
+      number: repoInfo?.stargazers_count,
       icon: <IconStar />,
     },
   ];

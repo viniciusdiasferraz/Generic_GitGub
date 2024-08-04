@@ -17,8 +17,8 @@
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx",
-    "src/icons/iconGithub.js",
-    "src/hooks/useRepoInformation/index.js"
-  ],
+    "src/icons/iconGithub.tsx",
+    "src/hooks/useRepoInformation/index.tsx"
+, "src/utils/utils.js"  ],
   "exclude": ["node_modules"]
 }

@@ -3,6 +3,8 @@ import { useServices } from "../../service/query";
 import { useRouter } from "next/router";
 import { sortRepositories } from "../../utils/utils";
 import { toast } from "react-toastify";
+import User from '../../types/allTypes'
+
 
 export const useInformation = () => {
   const { getUser, getUserRepo } = useServices();
@@ -10,12 +12,14 @@ export const useInformation = () => {
   const [userRepositories, setUserRepositories] = useState([]);
   const [originalRepositories, setOriginalRepositories] = useState([]);
   const [inputData, setInputData] = useState("");
-  const [userData, setUserData] = useState([]);
+  const [userData, setUserData] = useState<User>();
   const [sortOrder, setSortOrder] = useState("desc");
   const { query, push } = useRouter();
   const { id } = query;
+  console.log(userData, 'userData');
+  
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e: { preventDefault: () => void }) => {
     e.preventDefault();
     push(`/usersInformation/${inputData}`);
   };
@@ -45,7 +49,7 @@ export const useInformation = () => {
   }, [id, sortOrder]);
 
   useEffect(() => {
-    if (id && userData?.length === 0) {
+    if (id && !userData) {
       fetchUserData();
     }
     if (id && originalRepositories?.length === 0) {
