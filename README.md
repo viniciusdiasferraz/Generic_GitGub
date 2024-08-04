@@ -1,4 +1,4 @@
-Users
+Generic_GitGub
 Este projeto é uma aplicação web desenvolvida com Next.js, React, e TypeScript. Utiliza várias bibliotecas modernas, como Axios para requisições HTTP e Tailwind CSS para estilização.
 
 Requisitos
@@ -8,11 +8,16 @@ Instalação
 Para começar a utilizar este projeto, siga os seguintes passos:
 
 Clone o repositório:
+
+bash
+Copiar código
 git clone https://github.com/viniciusdiasferraz/Generic_GitGub
-
+cd users
 Instale as dependências:
-npm install
 
+bash
+Copiar código
+npm install
 Scripts Disponíveis
 No diretório do projeto, você pode executar:
 
@@ -42,6 +47,27 @@ Estrutura do Projeto
 /styles: Contém os arquivos de estilo global.
 /utils: Contém funções e utilitários auxiliares.
 /hooks: Contém hooks customizados.
+Contribuição
+Contribuições são bem-vindas! Para contribuir, siga os passos:
+
+Faça um fork do projeto.
+
+Crie uma nova branch:
+
+bash
+Copiar código
+git checkout -b feature/nova-feature
+Faça as alterações necessárias e commit:
+
+bash
+Copiar código
+git commit -am 'Adiciona nova feature'
+Faça o push para a branch:
+
+bash
+Copiar código
+git push origin feature/nova-feature
+Crie um novo Pull Request.
 
 Licença
 Este projeto está licenciado sob a licença MIT. Veja o arquivo LICENSE para mais detalhes.
