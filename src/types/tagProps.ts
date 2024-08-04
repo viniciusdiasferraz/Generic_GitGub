@@ -1,5 +1,5 @@
 export default interface TagProps {
-  text: string;
-  number: number;
-  icon: JSX.Element;
+  text?: string;
+  number?: number;
+  icon?: JSX.Element;
 }

@@ -28,7 +28,7 @@ export default function Home() {
             />
             <label
               className="absolute text-[#8d96a0] text-base duration-150 transform -translate-y-3 top-5 z-10 origin-[0] left-11 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-4 peer-focus:text-[#4493f8]"
-              for="username"
+              htmlFor="username"
             >
               Name
             </label>
